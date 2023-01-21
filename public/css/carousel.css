@@ -1,0 +1,45 @@
+.carousel-item {
+    height: 32em;
+    background: #000;
+    color: #fff;
+    position: relative;
+}
+
+.container {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding-bottom: 50px;
+}
+
+.text-start a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s ease;
+    outline: none;
+    font-size: 20px;
+    padding: 10px 25px;
+    border: 2px solid #fff;
+    border-radius: 0;
+    background: transparent;
+    cursor: pointer;
+    
+}
+
+.active .primary:hover {
+    background: transparent;
+    border-color: #ffd884;
+    color: #ffd884;
+}
+
+.overlay-image {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.5;
+}
