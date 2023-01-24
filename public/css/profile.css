@@ -1,0 +1,41 @@
+main {
+	justify-content: start;
+	align-items: center;
+	padding: 50px 0;
+}
+
+#name {
+	text-align: center;
+    font-size: 48px;
+    font-weight: 700;
+	margin: 0;
+}
+
+.reservation {
+	display: flex;
+	position: relative;
+	width: 400px;
+	padding: 30px;
+	margin: 20px;
+	border: 2px solid #000;
+    flex-direction: column;
+    flex: 1 0 auto;
+    justify-content: center;
+	align-items: center;
+}
+
+.reservation p {
+	margin: 10px;
+}
+
+.reservation a.edit {
+	position: absolute;
+	right: 50px;
+	top: 0px;
+}
+
+.reservation a.delete {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+}

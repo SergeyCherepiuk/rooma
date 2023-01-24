@@ -15,7 +15,8 @@ body {
 
 nav {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding: 0 50px;
     color: #fff;
     background: #34333b;
     align-items: center;
@@ -68,7 +69,7 @@ footer p {
     text-align: center;
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 860px) {
     nav {
         flex-direction: column;
     }

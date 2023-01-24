@@ -17,7 +17,7 @@ class ReservationController extends Controller
      */
     public function __construct()
     {
-      $this->middleware('auth')->only(['index']);
+        this->middleware('auth')->only(['index']);
     }
 
     public function index()
@@ -27,8 +27,9 @@ class ReservationController extends Controller
 
     public function show()
     {
-        $reservations = DB::table('reservations')->where('user_id', Auth::user()->id)->get();
-        return view('reservation.reservations', compact('reservations'));
+        $user = Auth::user();
+        $reservations = DB::table('reservations')->where('user_id', $user->id)->get();
+        return view('reservation.reservations', compact(array('reservations', 'user')));
     }
 
     /**
@@ -93,6 +94,7 @@ class ReservationController extends Controller
      */
     public function destroy(Reservation $reservation)
     {
-        //
+        $reservation->delete();
+        return redirect('reservations');
     }
 }
