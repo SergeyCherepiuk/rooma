@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Reservation;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use DB;
 
 class ReservationController extends Controller
 {
@@ -12,9 +15,20 @@ class ReservationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+      $this->middleware('auth')->only(['index']);
+    }
+
     public function index()
     {
-        return view('reservation.index');
+        return view("reservation.index");
+    }
+
+    public function show()
+    {
+        $reservations = DB::table('reservations')->where('user_id', Auth::user()->id)->get();
+        return view('reservation.reservations', compact('reservations'));
     }
 
     /**
@@ -35,18 +49,17 @@ class ReservationController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Reservation  $reservation
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Reservation $reservation)
-    {
-        //
+        $data = $request->input();
+        $reservation = new Reservation;
+        $reservation->user_id = $request->user()->id;
+        $reservation->class = $data['room-class'];
+        $reservation->rooms = $data['rooms'];
+        $reservation->from = $data['check-in'];
+        $reservation->to = $data['check-out'];
+        $reservation->adults = $data['adults'];
+        $reservation->children = $data['children'];
+        $reservation->save();
+        return redirect('reservations');
     }
 
     /**

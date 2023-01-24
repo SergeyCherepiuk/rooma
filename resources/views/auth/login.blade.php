@@ -13,14 +13,9 @@
     <form method="POST" action="{{ route('login') }}">
         @csrf
         <h2>Log In</h2>
-        <div>
-            <label for="email">Email</label>
-            <input id="email" type="email" name="email" required autofocus />
-        </div>
-        <div class="mt-4">
-            <label for="password">Password</label>
-            <input id="password" type="password" name="password" required autocomplete="current-password" />
-        </div>
+        <input id="email" type="email" name="email" placeholder="Email" required autofocus />
+        <input id="password" type="password" name="password" placeholder="Password" required autocomplete="current-password" />
+
         <div class="block mt-4">
             <label for="remember_me">
                 <input id="remember_me" type="checkbox" name="remember">

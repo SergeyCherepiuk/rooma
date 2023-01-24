@@ -2,6 +2,64 @@ main {
 	align-items: center;
 }
 
+form {
+    width: 480px;
+    margin: 0;
+    padding: 0;
+    margin: 20px 0;
+}
+
 h2 {
-	text-align: center;
+    text-align: center;
+    color: #666;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+input[type=email],
+input[type=password] {
+    border: 0;
+    padding: 7px 0;
+    border-bottom: 2px solid #7b7b7b;
+    color: #333;
+    width: 100%;
+    box-sizing: border-box;
+    transition: 0.3s ease;
+}
+
+input[type=email]:focus,
+input[type=password]:focus {
+    border-bottom: 2px solid #000;
+}
+
+*:focus {
+    outline: none;
+}
+
+form button {
+    width: 100%;
+    margin-bottom: 20px;
+    outline: none;
+    padding: 10px 25px;
+    border: 2px solid #7b7b7b;
+    background: transparent;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+form button:hover {
+    border-color:#000;
+}
+
+form button,
+input[type=email],
+input[type=password] {
+	margin: 15px 0;
+}
+
+@media screen and (max-width: 480px) {
+	form {
+		width: 25%;
+	}
 }

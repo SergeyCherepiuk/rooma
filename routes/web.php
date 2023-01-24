@@ -15,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::middleware('auth')->group(function (){
+    Route::get('/dashboard', 'DashboardController@dashboard')->name('dashboard');
+});
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -31,21 +35,13 @@ Route::get('/about', function () {
     return view('about.index');
 });
 
-// Route::get('/reservation', function () {
-//     return view('reservation.index');
-// })->middleware(['auth', 'verified'])->name('reservation');
-
 // TODO!
 Route::middleware('auth')->group(function () {
     Route::get('/reservation', [ReservationController::class, 'index'])->name('reservation.index');
-    Route::get('/user/{id}/reservations', [ReservationController::class, 'show'])->name('reservation.show');
-    Route::post('/user/{id}/reservation', [ReservationController::class, 'store'])->name('reservation.store'); // or create
-    Route::patch('/user/{id}/reservation', [ReservationController::class, 'update'])->name('reservation.update');
-    Route::delete('/user/{id}/reservation', [ReservationController::class, 'destroy'])->name('reservation.destroy');
+    Route::post('/reservation/store', [ReservationController::class, 'store'])->name('reservation.store');
+    Route::get('/reservations', [ReservationController::class, 'show'])->name('reservation.show'); // TODO: Change to "profile"
 });
 
 Route::get('/contact', function () {
     return view('contact.index');
 });
-
-// Route::resource('/reservation', ReservationController::class);

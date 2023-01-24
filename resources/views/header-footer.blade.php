@@ -17,6 +17,14 @@
             <li><a href="{{ url('/reservation') }}">Rezerwacja</a></li>
             <li><a href="{{ url('/contact') }}">Kontakt</a></li>
         </ul>
+        <ul>
+            @if (Auth::check())
+                <li><a href="{{ url('/reservations') }}">Profile</a></li>
+            @else
+                <li><a href="{{ url('/login') }}">Log In</a></li>
+                <li><a href="{{ url('/register') }}">Register</a></li>
+            @endif
+        </ul>
     </nav>
     <main>
         @yield('content')

@@ -10,7 +10,8 @@
 @endpush
 
 @section('content')
-	<form id="reservation-form">
+	<form id="reservation-form" action="{{ route('reservation.store') }}" method="POST">
+		@csrf
 		<div class="reservation">
 			<img src="{{ url('images/room4.avif') }}" alt="room">
 			<div class="reservation-inputs">
