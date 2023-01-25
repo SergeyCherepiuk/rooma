@@ -1,7 +1,7 @@
 @extends('header-footer')
 
 @section('title')
-	About Us
+	About us
 @endsection
 
 @push('head')
@@ -14,15 +14,15 @@
 		<h3>About us</h3>
 		<div class="about-box">
 			<img src="{{ URL('images/room3.avif') }}" alt="room">
-			<p>Wszystkie pokoje zostały urządzone w nowoczesnej stylistyce, zaprojektowanej z myślą o zapewnieniu komfortu i dobrego samopoczucia naszym gościom, czy to przyjeżdżającym na rodzinne wakacje, czy też planującym romantyczny weekend dla dwojga. Design oraz wyposażenie pokoi z pewnością sprostają najbardziej wymagającym gustom.</p>
+			<p>All rooms are decorated in a modern style, designed to ensure the comfort and well-being of our Guests, whether coming for a family holiday or planning a romantic weekend for two. The design and equipment of the rooms will certainly meet the most demanding tastes.</p>
 		</div>
 		<div class="about-box">
 			<img src="{{ URL('images/restaurant3.avif') }}" alt="restaurant">
-			<p>Otoczenie, gościnność i doświadczenie personelu odpowiedzialnego za opiekę nad Gośćmi gwarantują profesjonalne przygotowanie każdej imprezy okolicznościowej, eventu lub spotkania w gronie rodzinnym. Tradycyjne specjały kuchni polskiej i nie tylko, wyszukane dania rybne oraz wspaniałe wypieki z własnej piekarni i cukierni - to jedynie część tego, co zapewniamy Gościom.</p>
+			<p>The environment, hospitality and experience of the staff responsible for taking care of guests guarantee professional preparation of every occasion, event or family meeting. Traditional specialties of Polish and other cuisines, sophisticated fish dishes and wonderful pastries from our own bakery and pastry shop - this is only part of what we provide to our Guests.</p>
 		</div>
 		<div class="about-box">
 			<img src="{{ URL('images/spa3.avif') }}" alt="spa">
-			<p>Nowoczesna strefa SPA to przestronne, urządzone ze smakiem wnętrza oraz bogata oferta profesjonalnych zabiegów. Każda wizyta w naszym nadmorskim SPA zapewni relaks i poprawę samopoczucia.</p>
+			<p>The modern SPA zone is a spacious, tastefully decorated, interior and a wide range of professional treatments. Each visit to our seaside SPA will ensure relaxation and improvement of well-being.</p>
 		</div>			
 	</section>
 @endsection

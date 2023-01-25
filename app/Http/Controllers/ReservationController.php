@@ -17,19 +17,14 @@ class ReservationController extends Controller
      */
     public function __construct()
     {
-        this->middleware('auth')->only(['index']);
+        $this->middleware('auth')->only(['index']);
     }
 
-    public function index()
-    {
-        return view("reservation.index");
-    }
-
-    public function show()
+    public function show($id)
     {
         $user = Auth::user();
         $reservations = DB::table('reservations')->where('user_id', $user->id)->get();
-        return view('reservation.reservations', compact(array('reservations', 'user')));
+        return view('reservation.index', compact(array('reservations', 'user')));
     }
 
     /**
@@ -39,7 +34,7 @@ class ReservationController extends Controller
      */
     public function create()
     {
-        //
+        return view("reservation.create");
     }
 
     /**
@@ -53,14 +48,14 @@ class ReservationController extends Controller
         $data = $request->input();
         $reservation = new Reservation;
         $reservation->user_id = $request->user()->id;
-        $reservation->class = $data['room-class'];
+        $reservation->apartment_class = $data['apartment-class'];
         $reservation->rooms = $data['rooms'];
         $reservation->from = $data['check-in'];
         $reservation->to = $data['check-out'];
         $reservation->adults = $data['adults'];
         $reservation->children = $data['children'];
         $reservation->save();
-        return redirect('reservations');
+        return redirect('reservation/index');
     }
 
     /**
@@ -71,7 +66,7 @@ class ReservationController extends Controller
      */
     public function edit(Reservation $reservation)
     {
-        //
+        return view('reservation.edit', compact('reservation'));
     }
 
     /**
@@ -83,7 +78,16 @@ class ReservationController extends Controller
      */
     public function update(Request $request, Reservation $reservation)
     {
-        //
+        $data = $request->input();
+        $reservation->update([
+            'apartment_class' => $data['apartment-class'],
+            'rooms' => $data['rooms'],
+            'from' => $data['check-in'],
+            'to' => $data['check-out'],
+            'adults' => $data['adults'],
+            'children' => $data['children'],
+        ]);
+        return redirect('reservation/index');
     }
 
     /**
@@ -95,6 +99,6 @@ class ReservationController extends Controller
     public function destroy(Reservation $reservation)
     {
         $reservation->delete();
-        return redirect('reservations');
+        return redirect('reservation/index');
     }
 }

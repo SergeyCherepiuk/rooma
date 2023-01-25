@@ -1,7 +1,7 @@
 @extends('header-footer')
 
 @section('title')
-	Contact Us
+	Contact us
 @endsection
 
 @push('head')
@@ -14,18 +14,18 @@
 	<main>
 		<div class="contact">
 			<form action="mailto:rooma-hotel@example.com" method="post" class="contact-form">
-				<h3>Kontakt</h3>
+				<h3>Contact</h3>
 				<div class="credits">
 					<input type="text" name="name" id="name" pattern="^[A-Z][a-z]{2,20}(\s[A-Z][a-z]{2,20})?$" title="Imię musi zaczynać się z dużej litery i mieć co najmniej trzy litery!" placeholder="Imię" required>
 					<input type="email" name="email" id="email" placeholder="Email" required>
 				</div>
 				<input type="text" name="subject" id="subject" placeholder="Temat" required>
 				<textarea name="message" id="message" rows="5" placeholder="Wiadomość" required></textarea>
-				<button type="submit">Wyślij</button>
+				<button type="submit">Send</button>
 			</form>
 			<section class="info">
 				<div class="info-box">
-					<h3>Nasz adres</h3>
+					<h3>Address</h3>
 					<p>ul. Wyzwolenia 29, Dźwirzyno</p>
 				</div>
 				<div class="info-box">
@@ -33,7 +33,7 @@
 					<p>rooma-hotel@example.com</p>
 				</div>
 				<div class="info-box">
-					<h3>nr. Telefonu</h3>
+					<h3>Phone number</h3>
 					<p>+48 589 587 526</p>
 				</div>
 			</section>

@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('reservations', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
-            $table->enum('class', ['A', 'B', 'C', 'D']);
+            $table->enum('apartment_class', ['A', 'B', 'C', 'D']);
             $table->enum('rooms', ['1', '2', '3']);
             $table->date('from');
             $table->date('to');

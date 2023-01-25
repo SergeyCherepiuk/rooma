@@ -23,8 +23,8 @@
 				<div class="container">
 					<div class="carousel-caption text-start">
 						<h1>ROOMA Hotels</h1>
-						<p>Sieć hoteli №1 w Polsce. Do najbardziej wymagających klientów.</p>
-						<p><a class="primary" href="{{ url('/reservation') }}">Rezerwacja</a></p>
+						<p>Hotel chain №1 in Poland. For the most demanding customers.</p>
+						<p><a class="primary" href="{{ url('reservation/create') }}">Reservation</a></p>
 					</div>
 				</div>
 			</div>
@@ -33,8 +33,8 @@
 				<div class="container">
 					<div class="carousel-caption text-start">
 						<h1>ROOMA Hotels</h1>
-						<p>Sieć hoteli №1 w Polsce. Do najbardziej wymagających klientów.</p>
-						<p><a class="primary" href="{{ url('/reservation') }}">Rezerwacja</a></p>
+						<p>Hotel chain №1 in Poland. For the most demanding customers</p>
+						<p><a class="primary" href="{{ url('reservation/create') }}">Reservation</a></p>
 					</div>
 				</div>
 			</div>
@@ -43,8 +43,8 @@
 				<div class="container">
 					<div class="carousel-caption text-start">
 						<h1>ROOMA Hotels</h1>
-						<p>Sieć hoteli №1 w Polsce. Do najbardziej wymagających klientów.</p>
-						<p><a class="primary" href="{{ url('/reservation') }}">Rezerwacja</a></p>
+						<p>Hotel chain №1 in Poland. For the most demanding customers</p>
+						<p><a class="primary" href="{{ url('reservation/create') }}">Reservation</a></p>
 					</div>
 				</div>
 			</div>
@@ -61,17 +61,17 @@
 	<div class="cards">
 		<div class="card">
 			<img src="{{ URL('images/room2.avif') }}" alt="card1">
-			<p>Każdy z pokoi jest elegancki, nowoczesny, a jednocześnie bardzo kameralny, dzięki czemu można przyjemnie odprężyć się.</p>
+			<p>Each of the rooms is elegant, modern and at the same time very intimate, thanks to which you can pleasantly relax.</p>
 			<a href="about-us.html#box1">Więcej</a>
 		</div>
 		<div class="card">
 			<img src="{{ URL('images/restaurant2.avif') }}" alt="card2">
-			<p>Szef kuchni naszej eleganckiej restauracji codziennie serwuje dania, które zawsze trafiają w gusta naszych Gości. Zapraszamy!</p>
+			<p>The Chef of our elegant restaurant serves dishes every day that always meet the tastes of our Guests. Welcome!</p>
 			<a href="about-us.html#box2">Więcej</a>
 		</div>
 		<div class="card">
 			<img src="{{ URL('images/spa2.avif') }}" alt="card3">
-			<p>Jedyne w Polsce SPA w klimacie Morza Bałtyckiego, z wodą w każdym stanie skupienia, zaprasza na pełną niezapomnianych wrażeń podróż do źródeł piękna.</p>
+			<p>The only SPA in Poland in the climate of the Baltic Sea, with water in every state of aggregation, invites you to an unforgettable journey to the sources of beauty.</p>
 			<a href="about-us.html#box3">Więcej</a>
 		</div>
 	</div>

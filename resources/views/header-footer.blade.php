@@ -13,13 +13,17 @@
         <img src="{{ URL('images/logo.png') }}" class="logo" alt="logo">
         <ul>
             <li><a href="{{ url('/home') }}">Home</a></li>
-            <li><a href="{{ url('/about') }}">O nas</a></li>
-            <li><a href="{{ url('/reservation') }}">Rezerwacja</a></li>
-            <li><a href="{{ url('/contact') }}">Kontakt</a></li>
+            <li><a href="{{ url('/about') }}">About us</a></li>
+            <li><a href="{{ url('/reservation/create') }}">Reservation</a></li>
+            <li><a href="{{ url('/contact') }}">Contact</a></li>
         </ul>
         <ul>
             @if (Auth::check())
-                <li><a href="{{ url('/reservations') }}">Profile</a></li>
+                @if (request()->routeIs('reservation.show'))
+                    <li><a href="{{ url('logout') }}">Log Out</a></li>
+                @else
+                    <li><a href="{{ url('/reservation/index') }}">Profile</a></li>
+                @endif
             @else
                 <li><a href="{{ url('/login') }}">Log In</a></li>
                 <li><a href="{{ url('/register') }}">Register</a></li>
