@@ -62,17 +62,17 @@
 		<div class="card">
 			<img src="{{ URL('images/room2.avif') }}" alt="card1">
 			<p>Each of the rooms is elegant, modern and at the same time very intimate, thanks to which you can pleasantly relax.</p>
-			<a href="about-us.html#box1">More</a>
+			<a href="{{ url('/about') }}">More</a>
 		</div>
 		<div class="card">
 			<img src="{{ URL('images/restaurant2.avif') }}" alt="card2">
 			<p>The Chef of our elegant restaurant serves dishes every day that always meet the tastes of our Guests. Welcome!</p>
-			<a href="about-us.html#box2">More</a>
+			<a href="{{ url('/about') }}">More</a>
 		</div>
 		<div class="card">
 			<img src="{{ URL('images/spa2.avif') }}" alt="card3">
 			<p>The only SPA in Poland in the climate of the Baltic Sea, with water in every state of aggregation, invites you to an unforgettable journey to the sources of beauty.</p>
-			<a href="about-us.html#box3">More</a>
+			<a href="{{ url('/about') }}">More</a>
 		</div>
 	</div>
 @endsection
