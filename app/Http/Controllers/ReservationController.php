@@ -7,6 +7,8 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use DB;
+use App\Rules\IsLatestThan;
+use DateTime;
 
 class ReservationController extends Controller
 {
@@ -45,16 +47,26 @@ class ReservationController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->input();
-        $reservation = new Reservation;
-        $reservation->user_id = $request->user()->id;
-        $reservation->apartment_class = $data['apartment-class'];
-        $reservation->rooms = $data['rooms'];
-        $reservation->from = $data['check-in'];
-        $reservation->to = $data['check-out'];
-        $reservation->adults = $data['adults'];
-        $reservation->children = $data['children'];
-        $reservation->save();
+        $check_in_date = new DateTime($request->input('check-in'));
+
+        $request->validate([
+            'apartment-class' => 'in:A,B,C,D',
+            'rooms' => 'in:1,2,3',
+            'check-in' => new IsLatestThan(),
+            'check-out' => new IsLatestThan($check_in_date->format('Y-m-d')),
+            'adults' => 'in:1,2,3,4,5,6',
+            'children' => 'in:0,1,2,3,4,5,6',
+        ]);
+
+        $reservation = Reservation::create([
+            'user_id' => $request->user()->id,
+            'apartment-class' => $request->input('apartment-class'),
+            'rooms' => $request->input('rooms'),
+            'from' => $request->input('check-in'),
+            'to' => $request->input('check-out'),
+            'adults' => $request->input('adults'),
+            'children' => $request->input('children'),
+        ]);
         return redirect('reservation/index');
     }
 
@@ -78,6 +90,17 @@ class ReservationController extends Controller
      */
     public function update(Request $request, Reservation $reservation)
     {
+        $check_in_date = new DateTime($request->input('check-in'));
+
+        $request->validate([
+            'apartment-class' => 'in:A,B,C,D',
+            'rooms' => 'in:1,2,3',
+            'check-in' => new IsLatestThan(),
+            'check-out' => new IsLatestThan($check_in_date->format('Y-m-d')),
+            'adults' => 'in:1,2,3,4,5,6',
+            'children' => 'in:0,1,2,3,4,5,6',
+        ]);
+
         $data = $request->input();
         $reservation->update([
             'apartment_class' => $data['apartment-class'],

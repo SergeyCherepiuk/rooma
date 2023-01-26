@@ -10,6 +10,15 @@
 @endpush
 
 @section('content')
+	@if ($errors->any())
+		<div class="errors">
+			<ul>
+				@foreach ($errors->all() as $error)
+					<li>{{ $error }}</li>
+				@endforeach
+			</ul>
+		</div>
+	@endif
 	<form id="reservation-form" action="{{ route('reservation.store') }}" method="POST">
 		@csrf
 		<div class="reservation">

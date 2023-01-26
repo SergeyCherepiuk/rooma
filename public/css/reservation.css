@@ -3,7 +3,6 @@
     align-items: center;
     width: 60%;
     margin: auto;
-    margin-top: 40px;
     margin-bottom: 40px;
 }
 
@@ -115,6 +114,21 @@ input[type='checkbox'] {
 .reservation-buttons {
     display: flex;
     justify-content: space-between;
+}
+
+.errors {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.errors ul {
+    background: #FFAFAF;
+    color: #ff4f4f;
+    border: 2px solid #ff4f4f;
+    padding: 30px 60px;
+    margin: 40px;
+    width: fit-content;
 }
 
 @media screen and (min-width: 1600px) {
