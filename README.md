@@ -4,7 +4,7 @@
 [![composer - 2.5.1](https://img.shields.io/badge/composer-2.5.1-82b6e3)](https://getcomposer.org/download/)
 [![npm - 18.13.0](https://img.shields.io/badge/npm-18.13.0-c8600c)](https://nodejs.org/en/download/)
 
-Laravel CRUD web application...
+Laravel CRUD web application with the help of which you can reserve an apartment on the Baltic Sea sealine.
 
 ## How to run locally
 
