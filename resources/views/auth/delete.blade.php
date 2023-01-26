@@ -13,7 +13,7 @@
 	<form action="{{ route('auth.destroy') }}" method="POST">
 		@csrf
 		@method("DELETE")
-		<h2>Log In</h2>
+		<h2>Delete an account</h2>
 		<input id="password" type="password" name="password" placeholder="Password" required autofocus />
 		<button type="submit">Delete</button>
 	</form>

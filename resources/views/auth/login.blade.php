@@ -12,7 +12,7 @@
 @section('content')
     <form method="POST" action="{{ route('login') }}">
         @csrf
-        <h2>Log In</h2>
+        <h2>Log in</h2>
         <input id="email" type="email" name="email" placeholder="Email" required autofocus />
         <input id="password" type="password" name="password" placeholder="Password" required />
         <label for="remember_me">
