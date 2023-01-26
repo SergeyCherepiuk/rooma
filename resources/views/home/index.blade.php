@@ -44,27 +44,20 @@
 		</div>
 	</div>
 	<div class="cards">
-		<div class="card">
-			<img src="{{ URL('images/room2.avif') }}" alt="card1">
-			<p>Each of the rooms is elegant, modern and at the same time very intimate, thanks to which you can pleasantly relax.</p>
-			<a href="{{ url('/about') }}">More</a>
-		</div>
-		<div class="card">
-			<img src="{{ URL('images/restaurant2.avif') }}" alt="card2">
-			<p>The Chef of our elegant restaurant serves dishes every day that always meet the tastes of our Guests. Welcome!</p>
-			<a href="{{ url('/about') }}">More</a>
-		</div>
-		<div class="card">
-			<img src="{{ URL('images/spa2.avif') }}" alt="card3">
-			<p>The only SPA in Poland in the climate of the Baltic Sea, with water in every state of aggregation, invites you to an unforgettable journey to the sources of beauty.</p>
-			<a href="{{ url('/about') }}">More</a>
-		</div>
+		@include('home.partials.card', [
+			'background_image' => 'images/room2.avif',
+			'alt' => 'card1',
+			'text' => 'Each of the rooms is elegant, modern and at the same time very intimate, thanks to which you can pleasantly relax.',
+		])
+		@include('home.partials.card', [
+			'background_image' => 'images/restaurant2.avif',
+			'alt' => 'card2',
+			'text' => 'The Chef of our elegant restaurant serves dishes every day that always meet the tastes of our Guests. Welcome!',
+		])
+		@include('home.partials.card', [
+			'background_image' => 'images/spa2.avif',
+			'alt' => 'card3',
+			'text' => 'The only SPA in Poland in the climate of the Baltic Sea, with water in every state of aggregation, invites you to an unforgettable journey to the sources of beauty.',
+		])
 	</div>
 @endsection
-
-
-{{-- <div class="carousel-caption text-start">
-	<h1>ROOMA Hotels</h1>
-	<p>Hotel chain №1 in Poland. For the most demanding customers</p>
-	<p><a class="primary" href="{{ url('reservation/create') }}">Reservation</a></p>
-</div> --}}

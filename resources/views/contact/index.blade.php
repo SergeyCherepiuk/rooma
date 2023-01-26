@@ -24,18 +24,9 @@
 				<button type="submit">Send</button>
 			</form>
 			<section class="info">
-				<div class="info-box">
-					<h3>Address</h3>
-					<p>ul. Wyzwolenia 29, Dźwirzyno</p>
-				</div>
-				<div class="info-box">
-					<h3>Email</h3>
-					<p>rooma-hotel@example.com</p>
-				</div>
-				<div class="info-box">
-					<h3>Phone number</h3>
-					<p>+48 589 587 526</p>
-				</div>
+				@include('contact.partials.box', ['header' => 'Address', 'text' => 'Wyzwolenia 29, Dźwirzyno'])
+				@include('contact.partials.box', ['header' => 'Email', 'text' => 'rooma-hotel@example.com'])
+				@include('contact.partials.box', ['header' => 'Phone number', 'text' => '+48 589 587 526'])
 			</section>
 		</div>
 		<div id="map"></div>

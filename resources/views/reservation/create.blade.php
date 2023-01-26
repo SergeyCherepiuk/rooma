@@ -28,16 +28,15 @@
 				<div class="room-info">
 					<select size="1" name="apartment-class" id="apartment-class" class="apartment-class">
 						<option value="hide" class="select-hidden">Apartment class</option>
-						<option value="A">A class</option>
-						<option value="B">B class</option>
-						<option value="C">C class</option>
-						<option value="D">D class</option>
+						@foreach (array("A", "B", "C", "D") as $letter)
+							<option value="{{ $letter }}">{{ $letter }} class</option>
+						@endforeach
 					</select>
 					<select size="1" name="rooms" id="rooms" class="rooms">
 						<option value="hide" class="select-hidden">Rooms count</option>
-						<option value="1">1</option>
-						<option value="2">2</option>
-						<option value="3">3</option>
+						@for ($i = 1; $i <= 3; $i++)
+							<option value="{{ $i }}">{{ $i }}</option>
+						@endfor
 					</select>
 				</div>
 				<div class="dates">
@@ -47,22 +46,15 @@
 				<div class="persons-info">
 					<select size="1" name="adults" id="adults" class="adults">
 						<option value="hide" class="select-hidden">Adults</option>
-						<option value="1">1</option>
-						<option value="2">2</option>
-						<option value="3">3</option>
-						<option value="4">4</option>
-						<option value="5">5</option>
-						<option value="6">6</option>
+						@for ($i = 1; $i <= 6; $i++)
+							<option value="{{ $i }}">{{ $i }}</option>
+						@endfor
 					</select>
 					<select size="1" name="children" id="children" class="children">
 						<option value="hide" class="select-hidden">Children</option>
-						<option value="0">0</option>
-						<option value="1">1</option>
-						<option value="2">2</option>
-						<option value="3">3</option>
-						<option value="4">4</option>
-						<option value="5">5</option>
-						<option value="6">6</option>
+						@for ($i = 0; $i <= 6; $i++)
+							<option value="{{ $i }}">{{ $i }}</option>
+						@endfor
 					</select>
 				</div>
 				<div class="reservation-buttons">

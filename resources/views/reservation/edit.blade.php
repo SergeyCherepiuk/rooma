@@ -29,16 +29,15 @@
 				<div class="room-info">
 					<select size="1" name="apartment-class" id="apartment-class" class="apartment-class">
 						<option value="hide" class="select-hidden">Apartment class</option>
-						<option value="A" @if ($reservation->apartment_class == "A") selected="selected" @endif>A class</option>
-						<option value="B" @if ($reservation->apartment_class == "B") selected="selected" @endif>B class</option>
-						<option value="C" @if ($reservation->apartment_class == "C") selected="selected" @endif>C class</option>
-						<option value="D" @if ($reservation->apartment_class == "D") selected="selected" @endif>D class</option>
+						@foreach (array("A", "B", "C", "D") as $letter)
+							<option value="{{ $letter }}" @if ($reservation->apartment_class == $letter) selected="selected" @endif>{{ $letter }} class</option>
+						@endforeach
 					</select>
 					<select size="1" name="rooms" id="rooms" class="rooms">
-						<option value="hide" class="select-hidden">Liczba pokoi</option>
-						<option value="1" @if ($reservation->rooms == "1") selected="selected" @endif>1</option>
-						<option value="2" @if ($reservation->rooms == "2") selected="selected" @endif>2</option>
-						<option value="3" @if ($reservation->rooms == "3") selected="selected" @endif>3</option>
+						<option value="hide" class="select-hidden">Rooms count</option>
+						@for ($i = 1; $i <= 3; $i++)
+							<option value="{{ $i }}" @if ($reservation->rooms == $i) selected="selected" @endif>{{ $i }}</option>
+						@endfor
 					</select>
 				</div>
 				<div class="dates">
@@ -47,23 +46,16 @@
 				</div>
 				<div class="persons-info">
 					<select size="1" name="adults" id="adults" class="adults">
-						<option value="hide" class="select-hidden">Dorosłych</option>
-						<option value="1" @if ($reservation->adults == "1") selected="selected" @endif>1</option>
-						<option value="2" @if ($reservation->adults == "2") selected="selected" @endif>2</option>
-						<option value="3" @if ($reservation->adults == "3") selected="selected" @endif>3</option>
-						<option value="4" @if ($reservation->adults == "4") selected="selected" @endif>4</option>
-						<option value="5" @if ($reservation->adults == "5") selected="selected" @endif>5</option>
-						<option value="6" @if ($reservation->adults == "6") selected="selected" @endif>6</option>
+						<option value="hide" class="select-hidden">Adults</option>
+						@for ($i = 1; $i <= 6; $i++)
+							<option value="{{ $i }}" @if ($reservation->adults == $i) selected="selected" @endif>{{ $i }}</option>
+						@endfor
 					</select>
 					<select size="1" name="children" id="children" class="children">
-						<option value="hide" class="select-hidden">Dzieci</option>
-						<option value="0" @if ($reservation->children == "0") selected="selected" @endif>0</option>
-						<option value="1" @if ($reservation->children == "1") selected="selected" @endif>1</option>
-						<option value="2" @if ($reservation->children == "2") selected="selected" @endif>2</option>
-						<option value="3" @if ($reservation->children == "3") selected="selected" @endif>3</option>
-						<option value="4" @if ($reservation->children == "4") selected="selected" @endif>4</option>
-						<option value="5" @if ($reservation->children == "5") selected="selected" @endif>5</option>
-						<option value="6" @if ($reservation->children == "6") selected="selected" @endif>6</option>
+						<option value="hide" class="select-hidden">Children</option>
+						@for ($i = 0; $i <= 6; $i++)
+							<option value="{{ $i }}" @if ($reservation->children == $i) selected="selected" @endif>{{ $i }}</option>
+						@endfor
 					</select>
 				</div>
 				<div class="reservation-buttons">
