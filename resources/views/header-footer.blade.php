@@ -21,6 +21,9 @@
             @if (Auth::check())
                 @if (request()->routeIs('reservation.show'))
                     <li><a href="{{ url('logout') }}">Log Out</a></li>
+                    <li><a href="{{ url('delete') }}">Delete</a></li>
+                @elseif (request()->routeIs('auth.delete'))
+                    <li><a href="{{ url('reservation/index') }}">Back</a></li>
                 @else
                     <li><a href="{{ url('/reservation/index') }}">Profile</a></li>
                 @endif

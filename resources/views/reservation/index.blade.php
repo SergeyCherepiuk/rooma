@@ -40,7 +40,5 @@
 				</div>
 			@endforeach
 		@endif
-		{{-- TODO: "Delete account" button --}}
-		{{-- TODO: Remake register page --}}
 	</div>
 @endsection

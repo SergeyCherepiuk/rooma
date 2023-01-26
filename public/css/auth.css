@@ -17,6 +17,7 @@ h2 {
     margin-bottom: 30px;
 }
 
+input[type=text],
 input[type=email],
 input[type=password] {
     border: 0;
@@ -28,6 +29,7 @@ input[type=password] {
     transition: 0.3s ease;
 }
 
+input[type=text]:focus,
 input[type=email]:focus,
 input[type=password]:focus {
     border-bottom: 2px solid #000;
@@ -53,6 +55,7 @@ form button:hover {
 }
 
 form button,
+input[type=text],
 input[type=email],
 input[type=password] {
 	margin: 15px 0;

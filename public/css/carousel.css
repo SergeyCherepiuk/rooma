@@ -13,6 +13,11 @@
     padding-bottom: 50px;
 }
 
+.text-start {
+    width: 50%;
+    margin: auto;
+}
+
 .text-start a {
     color: #fff;
     text-decoration: none;
@@ -24,10 +29,9 @@
     border-radius: 0;
     background: transparent;
     cursor: pointer;
-    
 }
 
-.active .primary:hover {
+.text-start a:hover {
     background: transparent;
     border-color: #ffd884;
     color: #ffd884;
