@@ -8,6 +8,14 @@ Laravel CRUD web application with the help of which you can reserve an apartment
 
 ## How to run locally
 
+Run the script **run.sh**
+
+```bash
+./run.sh
+```
+
+or
+
 Download the Laravel installer using [composer](https://getcomposer.org/) and install Laravel core (vendor folder).
 
 ```bash
